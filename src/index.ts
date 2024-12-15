@@ -1,6 +1,7 @@
 import { obfuscate, ObfuscatorOptions } from "javascript-obfuscator";
 import anymatch, { Matcher } from "anymatch";
 import { resolve } from "path";
+import { Plugin } from "vite";
 
 const defaultIncludeMatcher = [/\.(jsx?|tsx?|cjs|mjs)$/];
 const defaultExcludeMatcher = [/node_modules/, /\.nuxt/];
@@ -25,12 +26,7 @@ type Options = {
    * Used for debugging, Print out the path of matching or excluding files
    */
   debugger?: boolean;
-  /**
-   * By default plugins are invoked for both serve and build. In cases where a plugin needs to be conditionally applied only during serve or build
-   * https://vitejs.dev/guide/api-plugin.html
-   */
-  apply?: "serve" | "build" | ((this: void, config: any, env: any) => boolean);
-};
+} & Pick<Plugin, 'apply'>;
 
 type UnArray<T> = T extends any[] ? never : T;
 
