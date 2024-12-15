@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elmeet/vite-plugin-javascript-obfuscator.git"
+    "url": "https://github.com/Pikachews/vite-plugin-javascript-obfuscator.git"
   },
   "keywords": [
     "vite",
